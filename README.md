@@ -1,43 +1,62 @@
-# 🍳 Kniha receptů (Cookbook App)
+# 🍳 Cookbook App
 
-Aplikace pro správu receptů a ingrediencí postavená na **Node.js + Express.js** backendu s klasickým HTML/CSS/JavaScript frontendem.
+React + Vite frontend se **Express.js** backendem pro správu receptů a ingrediencí.
 
 ## 📁 Struktura projektu
 
 ```
-Projekt_2/
+Kucharka/
 ├── backend/
-│   ├── server.js          # Express.js backend (jeden přehledný soubor)
-│   └── data.json          # Úložiště dat (automaticky vytvořeno)
-├── app.js                 # Frontendová logika
-├── index.html             # HTML struktura
-├── styles.css             # Styly
-├── package.json           # NPM konfigurace
+│   ├── server.js          # Express backend a API
+│   └── data.json          # Ukládání dat (JSON)
+├── frontend/              # React + Vite aplikace
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── README.md
+├── package.json           # Root skripty pro build a start
 └── README.md              # Tento soubor
 ```
 
-## 🚀 Rychlé spuštění
+## 🚀 Spuštění projektu
 
 ### 1. Instalace závislostí
 
 ```bash
 npm install
+cd frontend
+npm install
 ```
 
-### 2. Spuštění backendu
+### 2. Spuštění v režimu vývoje
+
+- Backend:
+  ```bash
+  npm run dev
+  ```
+- Frontend:
+  ```bash
+  npm run dev:frontend
+  ```
+
+Frontend běží na Vite portu (obvykle `http://localhost:5173`) a backend na `http://localhost:3000`.
+
+### 3. Spuštění celé aplikace
 
 ```bash
 npm start
 ```
 
-Server se spustí na adrese `http://localhost:3000`
+Tento příkaz nejprve vytvoří React build a poté spustí Express server. Pokud je `frontend/dist` k dispozici, backend frontend také servíruje.
 
-### 3. Otevření frontendu
+## 🧰 Dostupné skripty
 
-Otevřete soubor `index.html` v prohlížeči. Můžete použít:
-- Přímo otevřít soubor v prohlížeči
-- Použít rozšíření "Live Server" ve VS Code
-- Spustit jednoduchý HTTP server: `npx serve .`
+- `npm install` – nainstaluje root závislosti
+- `npm run dev` – spustí backend server
+- `npm run dev:frontend` – spustí frontend pro vývoj
+- `npm run build:frontend` – vytvoří produkční build React aplikace
+- `npm run preview:frontend` – preview produkčního buildu frontend
+- `npm start` – postaví frontend a spustí backend
 
 ## 📡 API Endpoints
 
@@ -61,9 +80,12 @@ Otevřete soubor `index.html` v prohlížeči. Můžete použít:
 | PUT | `/api/recipes/:id` | Aktualizovat recept |
 | DELETE | `/api/recipes/:id` | Smazat recept |
 
-## 📝 Datové struktury
+## 📝 Data a validace
 
-### Ingredience
+Backend ukládá data do `backend/data.json`.
+
+Ingredience obsahují:
+
 ```json
 {
   "id": "uuid",
@@ -72,7 +94,8 @@ Otevřete soubor `index.html` v prohlížeči. Můžete použít:
 }
 ```
 
-### Recept
+Recept obsahuje:
+
 ```json
 {
   "id": "uuid",
@@ -87,35 +110,22 @@ Otevřete soubor `index.html` v prohlížeči. Můžete použít:
 }
 ```
 
-## 💾 Ukládání dat
+Backend provádí základní validaci:
+- název ingredience je povinný
+- název receptu je povinný
+- recept musí obsahovat seznam ingrediencí
+- každá ingredience v receptu může být uvedena pouze jednou
 
-Data jsou automaticky ukládána do souboru `backend/data.json`. Tento soubor se vytvoří při prvním spuštění serveru.
+## 💾 Servování frontendu
+
+Pokud je vytvořen React build v `frontend/dist`, backend jej servíruje jako statické soubory. Jinak je možné frontend spustit samostatně přes Vite.
 
 ## 🛠️ Technologie
 
-- **Backend**: Node.js, Express.js, CORS
-- **Frontend**: Vanilla JavaScript, HTML5, CSS3
-- **Data**: JSON soubor
-
-## 🎯 Funkce
-
-- ✅ Přehledné API v jednom souboru
-- ✅ CRUD operace pro ingredience i recepty
-- ✅ Propojení receptů s ingrediencemi
-- ✅ Automatické čištění odkazů při mazání
-- ✅ Perzistence dat do JSON souboru
-- ✅ CORS povolení pro komunikaci s frontendem
-- ✅ Validace vstupů
-- ✅ České rozhraní
-
-## 🔧 Vývoj
-
-Pro vývoj můžete spustit server v režimu:
-
-```bash
-npm run dev
-```
+- Backend: `Node.js`, `Express`, `cors`
+- Frontend: `React`, `Vite`
+- Data: `JSON` soubor (`backend/data.json`)
 
 ## 📄 Licence
 
-ISC
+`ISC`
