@@ -59,7 +59,7 @@ export default function IngredientPanel({
   };
 
   return (
-    <section id="panel-ingredients" className="panel" role="tabpanel">
+    <section id="panel-ingredients" className="panel panel--active" role="tabpanel">
       <div className="panel__header">
         <h2>Ingredience :</h2>
         <button

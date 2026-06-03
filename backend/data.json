@@ -114,17 +114,6 @@
           "amount": "300"
         }
       ]
-    },
-    {
-      "id": "ad9eaab0-c4e7-4fec-affd-ebfc8188836d",
-      "name": "Spagety",
-      "steps": "Varit vodu, pridat ingredience",
-      "items": [
-        {
-          "ingredientId": "9e91b095-2b41-491c-b6e0-0c90c4209eb6",
-          "amount": "300"
-        }
-      ]
     }
   ]
 }
