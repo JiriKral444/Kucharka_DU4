@@ -1,43 +1,81 @@
-# 🍳 Kniha receptů (Cookbook App)
+# 🍳 Kuchařka (Cookbook App)
 
-Aplikace pro správu receptů a ingrediencí postavená na **Node.js + Express.js** backendu s klasickým HTML/CSS/JavaScript frontendem.
+Aplikace pro správu receptů a ingrediencí postavená na **Node.js + Express.js** backendu s **React + Vite.js** frontendem.
 
 ## 📁 Struktura projektu
 
 ```
-Projekt_2/
+Kucharka/
 ├── backend/
-│   ├── server.js          # Express.js backend (jeden přehledný soubor)
+│   ├── server.js          # Express.js backend
 │   └── data.json          # Úložiště dat (automaticky vytvořeno)
-├── app.js                 # Frontendová logika
-├── index.html             # HTML struktura
-├── styles.css             # Styly
-├── package.json           # NPM konfigurace
+├── frontend/
+│   ├── src/
+│   │   ├── components/    # React komponenty
+│   │   │   ├── IngredientCard.jsx
+│   │   │   ├── IngredientForm.jsx
+│   │   │   ├── IngredientList.jsx
+│   │   │   ├── IngredientPanel.jsx
+│   │   │   ├── RecipeCard.jsx
+│   │   │   ├── RecipeForm.jsx
+│   │   │   ├── RecipeList.jsx
+│   │   │   ├── RecipePanel.jsx
+│   │   │   └── Tabs.jsx
+│   │   ├── styles/        # CSS moduly
+│   │   │   ├── Cards.css
+│   │   │   ├── Forms.css
+│   │   │   ├── Global.css
+│   │   │   ├── Panels.css
+│   │   │   └── Tabs.css
+│   │   ├── utils/         # Pomocné funkce
+│   │   │   ├── formatting.js
+│   │   │   └── validation.js
+│   │   ├── api.js         # API komunikace
+│   │   ├── config.js      # Konfigurace
+│   │   ├── App.jsx        # Hlavní komponenta
+│   │   ├── main.jsx       # Vstupní bod
+│   │   └── index.css      # Globální styly
+│   ├── index.html         # HTML šablona
+│   ├── vite.config.js     # Vite konfigurace
+│   ├── eslint.config.js   # ESLint pravidla
+│   └── package.json       # Frontend závislosti
+├── package.json           # Root konfigurace
+├── CRUD.md                # CRUD operace dokumentace
 └── README.md              # Tento soubor
 ```
 
 ## 🚀 Rychlé spuštění
 
-### 1. Instalace závislostí
+### 1. Instalace závislostí backendu
 
 ```bash
 npm install
 ```
 
-### 2. Spuštění backendu
+### 2. Instalace závislostí frontendu
+
+```bash
+cd frontend
+npm install
+cd ..
+```
+
+### 3. Spuštění backendu
 
 ```bash
 npm start
 ```
 
-Server se spustí na adrese `http://localhost:3000`
+Backend se spustí na adrese `http://localhost:3000`
 
-### 3. Otevření frontendu
+### 4. Spuštění frontendu (v novém terminálu)
 
-Otevřete soubor `index.html` v prohlížeči. Můžete použít:
-- Přímo otevřít soubor v prohlížeči
-- Použít rozšíření "Live Server" ve VS Code
-- Spustit jednoduchý HTTP server: `npx serve .`
+```bash
+cd frontend
+npm run dev
+```
+
+Frontend se spustí na adrese `http://localhost:5173` (nebo jiné, viz výstup v terminálu)
 
 ## 📡 API Endpoints
 
@@ -94,8 +132,33 @@ Data jsou automaticky ukládána do souboru `backend/data.json`. Tento soubor se
 ## 🛠️ Technologie
 
 - **Backend**: Node.js, Express.js, CORS
-- **Frontend**: Vanilla JavaScript, HTML5, CSS3
+- **Frontend**: React 18+, Vite.js, CSS Modules
+- **Stavitelný systém**: Vite (bundle)
+- **Validace**: ESLint
 - **Data**: JSON soubor
+
+## 🎨 Architektura frontendu
+
+### Komponenty
+- **IngredientPanel** / **RecipePanel** - Panely s formulářem a seznamem
+- **IngredientList** / **RecipeList** - Seznamy s kartami
+- **IngredientCard** / **RecipeCard** - Jednotlivé karty
+- **IngredientForm** / **RecipeForm** - Formuláře pro vytváření/úpravu
+- **Tabs** - Přepínač mezi ingrediencemi a recepty
+
+### Styly
+Projekty používají CSS Modules rozdělené do logických skupin:
+- `Global.css` - Globální styly
+- `Cards.css` - Styly karet
+- `Forms.css` - Styly formulářů
+- `Panels.css` - Styly panelů
+- `Tabs.css` - Styly záložek
+
+### Utilily
+- `validation.js` - Validace vstupů
+- `formatting.js` - Formátování dat
+- `api.js` - Komunikace s backend API
+- `config.js` - Konfigurační konstanty
 
 ## 🎯 Funkce
 
@@ -110,10 +173,27 @@ Data jsou automaticky ukládána do souboru `backend/data.json`. Tento soubor se
 
 ## 🔧 Vývoj
 
-Pro vývoj můžete spustit server v režimu:
-
+### Spuštění backendu
 ```bash
+npm start
+```
+
+### Spuštění frontendu v dev módu
+```bash
+cd frontend
 npm run dev
+```
+
+### Build frontendu pro produkci
+```bash
+cd frontend
+npm run build
+```
+
+### Linting frontendu
+```bash
+cd frontend
+npm run lint
 ```
 
 ## 📄 Licence
