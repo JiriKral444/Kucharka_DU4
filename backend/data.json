@@ -1,0 +1,130 @@
+{
+  "ingredients": [
+    {
+      "id": "88c1e66e-fbeb-4013-bea6-0cbacf01502c",
+      "name": "Sýr",
+      "unit": "g"
+    },
+    {
+      "id": "9e91b095-2b41-491c-b6e0-0c90c4209eb6",
+      "name": "Špagety",
+      "unit": "g"
+    },
+    {
+      "id": "124ab425-5f36-48e0-843d-931c38827ede",
+      "name": "Sůl",
+      "unit": "g"
+    },
+    {
+      "id": "14f7c4dd-fac3-49dd-8f68-0e98636d2bfe",
+      "name": "Pepř",
+      "unit": "g"
+    },
+    {
+      "id": "86ab72e7-f993-46c6-bece-30237c802ff2",
+      "name": "Tomato omáčka",
+      "unit": "ml"
+    },
+    {
+      "id": "9f64bc72-7829-4b18-b062-ef85006029be",
+      "name": "Cukr \"Krystal\"",
+      "unit": "g"
+    },
+    {
+      "id": "393b52fc-ab21-4c23-9fd6-0ba1bad19165",
+      "name": "Cukr \"Vanilkový\"",
+      "unit": "g"
+    },
+    {
+      "id": "5e2df6b0-4640-4dc8-9e05-67c415788ab3",
+      "name": "Rum",
+      "unit": "ml"
+    },
+    {
+      "id": "dd6a59d8-f3be-4392-ae83-26a3b1055d4b",
+      "name": "Mouka \"Hladká\"",
+      "unit": "g"
+    },
+    {
+      "id": "6867fd4c-8a08-498f-836a-86f53e42dc8b",
+      "name": "Vejce",
+      "unit": "ks"
+    },
+    {
+      "id": "73ceabce-9d31-4138-99f2-aaa848e8e13b",
+      "name": "Mléko",
+      "unit": "ml"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "1bd4bb81-942c-4f54-b5ae-74de971cd1d3",
+      "name": "Špagety \"Carbonnara\"",
+      "steps": "Do vroucí vody vložíme (300g) špaget, vařím cca 10 min, přídáme sůl, kořéní, ....",
+      "items": [
+        {
+          "ingredientId": "9e91b095-2b41-491c-b6e0-0c90c4209eb6",
+          "amount": "300"
+        },
+        {
+          "ingredientId": "88c1e66e-fbeb-4013-bea6-0cbacf01502c",
+          "amount": "60"
+        },
+        {
+          "ingredientId": "14f7c4dd-fac3-49dd-8f68-0e98636d2bfe",
+          "amount": "1"
+        },
+        {
+          "ingredientId": "124ab425-5f36-48e0-843d-931c38827ede",
+          "amount": "1"
+        },
+        {
+          "ingredientId": "86ab72e7-f993-46c6-bece-30237c802ff2",
+          "amount": "50"
+        }
+      ]
+    },
+    {
+      "id": "be8ebe5e-9901-4b8d-9f8e-d3c3645da904",
+      "name": "Palačinky",
+      "steps": "Mléko smichame s vejci a vanilkovym cukrem, promícháme, přisipáváme mouku za stálého míchání ...,",
+      "items": [
+        {
+          "ingredientId": "124ab425-5f36-48e0-843d-931c38827ede",
+          "amount": "0.5"
+        },
+        {
+          "ingredientId": "73ceabce-9d31-4138-99f2-aaa848e8e13b",
+          "amount": "500"
+        },
+        {
+          "ingredientId": "393b52fc-ab21-4c23-9fd6-0ba1bad19165",
+          "amount": "5"
+        },
+        {
+          "ingredientId": "5e2df6b0-4640-4dc8-9e05-67c415788ab3",
+          "amount": "10"
+        },
+        {
+          "ingredientId": "6867fd4c-8a08-498f-836a-86f53e42dc8b",
+          "amount": "2"
+        },
+        {
+          "ingredientId": "dd6a59d8-f3be-4392-ae83-26a3b1055d4b",
+          "amount": "300"
+        }
+      ]
+    },
+    {
+      "id": "ad9eaab0-c4e7-4fec-affd-ebfc8188836d",
+      "name": "Spagety",
+      "steps": "Varit vodu, pridat ingredience",
+      "items": [
+        {
+          "ingredientId": "9e91b095-2b41-491c-b6e0-0c90c4209eb6",
+          "amount": "300"
+        }
+      ]
+    }
+  ]
+}

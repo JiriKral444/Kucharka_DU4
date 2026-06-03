@@ -1,0 +1,248 @@
+/* ============================================================================
+   COOKBOOK - Kniha receptů - Globální CSS
+   ============================================================================ */
+
+:root {
+  --bg: #b1a289;
+  --surface: #c0bbab;
+  --text: #2f1e91;
+  --text-muted: #2b5c0f;
+  --accent: #c2410c;
+  --accent-hover: #133b38;
+  --border: #33bdc2;
+  --danger: #d81d1d;
+  --radius: 35px;
+  --font: Segoe UI, system-ui, -apple-system, sans-serif;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* ============================================================================
+   APP LAYOUT
+   ============================================================================ */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background-color: var(--surface);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header__title {
+  font-size: 2.5rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.header__subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--surface);
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================================================
+   BUTTONS & GENERAL UI
+   ============================================================================ */
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+}
+
+.btn--primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn--secondary {
+  background-color: var(--border);
+  color: white;
+}
+
+.btn--secondary:hover {
+  background-color: #2a9fa2;
+  transform: translateY(-2px);
+}
+
+.btn--danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn--danger:hover {
+  background-color: #b01818;
+  transform: translateY(-2px);
+}
+
+.btn--sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ============================================================================
+   LOADING & ERROR STATES
+   ============================================================================ */
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.error-banner {
+  background-color: #fee;
+  border: 2px solid var(--danger);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: var(--danger);
+  font-weight: bold;
+}
+
+.error-banner--global {
+  margin: 0 0 1rem 0;
+}
+
+.error-messages {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-text {
+  color: #856404;
+  margin: 0.5rem 0;
+}
+
+.error-text:first-child {
+  margin-top: 0;
+}
+
+/* ============================================================================
+   EMPTY STATES
+   ============================================================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .header__title {
+    font-size: 1.8rem;
+  }
+
+  .header__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .main {
+    padding: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header__title {
+    font-size: 1.5rem;
+  }
+
+  .header__subtitle {
+    font-size: 0.85rem;
+  }
+
+  .main {
+    padding: 0.75rem;
+  }
+}

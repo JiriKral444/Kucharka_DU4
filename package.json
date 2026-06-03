@@ -1,0 +1,26 @@
+{
+  "name": "cookbook-app",
+  "version": "1.0.0",
+  "description": "Aplikace pro správu receptů a ingrediencí s React frontendem a Express.js backendem",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "npm run build:frontend && node backend/server.js",
+    "dev": "node backend/server.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "preview:frontend": "cd frontend && npm run preview"
+  },
+  "keywords": [
+    "cookbook",
+    "recipes",
+    "react",
+    "express",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}

@@ -1,0 +1,142 @@
+/* ============================================================================
+   FORMS
+   ============================================================================ */
+
+.form-card {
+  background-color: var(--surface);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.form-card--hidden {
+  display: none;
+}
+
+.form-card--visible {
+  display: block;
+}
+
+.form-card h3 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--text);
+  background-color: white;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(194, 65, 12, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Ingredients list */
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.ingredient-row {
+  display: grid;
+  grid-template-columns: 1fr 150px 100px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.ingredient-row select,
+.ingredient-row input {
+  width: 100%;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: flex-end;
+}
+
+.form-actions .btn {
+  flex: 1;
+  max-width: 200px;
+}
+
+/* Responsive forms */
+@media (max-width: 768px) {
+  .form-card {
+    padding: 1rem;
+  }
+
+  .ingredient-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredient-row select,
+  .ingredient-row input,
+  .ingredient-row button {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-card {
+    padding: 0.75rem;
+  }
+
+  .form-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .ingredient-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    gap: 0.5rem;
+  }
+}
