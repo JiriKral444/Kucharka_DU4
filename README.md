@@ -6,9 +6,10 @@ Aplikace pro správu receptů a ingrediencí s React + Vite frontendem a Express
 
 - Správa ingrediencí: vytvoření, zobrazení, úprava, smazání
 - Správa receptů: vytvoření, zobrazení, úprava, smazání
-- Recepty jsou provázané s ingrediencemi pomocí jejich `id`
-- Data jsou ukládána do souboru `backend/data.json`
-- Frontend může běžet samostatně v režimu vývoje nebo být servírován backendem po buildu
+- Recepty jsou propojené s ingrediencemi pomocí jejich `id`
+- Data jsou perzistentně uložena v `backend/data.json`
+- Frontend je single-page aplikace (SPA): jedna URL `/`, interní přepínání mezi views pomocí komponenty `Tabs`
+- Backend může servírovat frontend build z `frontend/dist`
 
 ## 📁 Struktura projektu
 
@@ -22,16 +23,15 @@ Kucharka/
 │   ├── src/               # React komponenty a logika
 │   ├── package.json       # frontend závislosti a skripty
 │   └── README.md          # frontend dokumentace
-├── node_modules/          # nainstalované balíčky
+├── seznam_route.md        # přehled route aplikace
 ├── package.json           # root skripty pro backend a frontend
-├── package-lock.json      # uzamčené verze závislostí
-└── README.md              # hlavní dokumentace projektu
+└── package-lock.json      # uzamčené verze závislostí
 ```
 
 ## ⚙️ Technologie
 
 - Backend: `Node.js`, `Express`, `cors`
-- Frontend: `React`, `Vite`, `ESLint`
+- Frontend: `React`, `Vite`
 - Data: JSON soubor uložený v `backend/data.json`
 
 ## 🚀 Instalace
@@ -58,7 +58,7 @@ cd ..
 npm run dev
 ```
 
-Tím spustíte backend server na `http://localhost:3000`.
+Backend poběží na `http://localhost:3000`.
 
 ### 2) Vývoj frontend
 
@@ -66,7 +66,7 @@ Tím spustíte backend server na `http://localhost:3000`.
 npm run dev:frontend
 ```
 
-Frontend běží přes Vite, typicky na `http://localhost:5173`.
+Frontend poběží na adrese `http://localhost:5173`.
 
 ### 3) Spuštění celé aplikace s buildem frontendu
 
@@ -74,15 +74,15 @@ Frontend běží přes Vite, typicky na `http://localhost:5173`.
 npm start
 ```
 
-Tento příkaz vytvoří produkční build frontendu a spustí Express server. Pokud je build dostupný, backend jej servíruje ze složky `frontend/dist`.
+Příkaz postaví frontend a spustí backend. Pokud je build dostupný, backend jej servíruje ze složky `frontend/dist`.
 
 ## 🧪 Root skripty
 
-- `npm install` – nainstaluje backend závislosti
+- `npm install` – nainstaluje root závislosti (backend)
 - `npm run dev` – spustí backend server
-- `npm run dev:frontend` – spustí frontend pro vývoj
+- `npm run dev:frontend` – spustí frontend Vite server
 - `npm run build:frontend` – vytvoří produkční build frontend aplikace
-- `npm run preview:frontend` – spustí preview pro produkční frontend
+- `npm run preview:frontend` – spustí preview produkčního frontendu
 - `npm start` – postaví frontend a spustí backend
 
 ## 🧾 Backend API
@@ -142,7 +142,7 @@ Backend kontroluje:
 - že `name` u ingredience není prázdné
 - že `name` u receptu není prázdné
 - že recept obsahuje pole `items`
-- že každá ingredience v receptu je uvedena jen jednou
+- že každý recept obsahuje pouze unikátní ingredience
 
 ## 💾 Ukládání dat
 
@@ -150,12 +150,16 @@ Data jsou perzistentně uložena v souboru `backend/data.json`. Pokud soubor nee
 
 ## 📦 Frontend
 
-Frontend je postaven jako React + Vite aplikace ve složce `frontend/`. K dispozici jsou React komponenty a samostatné CSS styly pro zobrazení receptů, ingrediencí a formulářů.
+Frontend je postaven jako React + Vite aplikace ve složce `frontend/`. Hlavní komponenta je `frontend/src/App.jsx`, která načítá data a řídí interní přepínání mezi `RecipePanel` a `IngredientPanel`.
 
 ## 🛠️ Vývoj a nasazení
 
 - Pro lokální vývoj spusťte backend a frontend odděleně.
-- Pro jednoduché nasazení použijte `npm start`, který build frontendu připraví a spustí backend.
+- Pro jednoduché lokální přípravu nasazení spusťte `npm start`, který vytvoří frontend build a spustí backend.
+
+## 📄 Další dokumentace
+
+- `seznam_route.md` — přehled všech route aplikace a jejich umístění v kódu.
 
 ## 📄 Licence
 
