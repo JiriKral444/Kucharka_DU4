@@ -7,6 +7,7 @@
   border-bottom: 3px solid var(--border);
   list-style: none;
   padding-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(28, 94, 49, 0.415);
 }
 
 .tabs__btn {
@@ -21,10 +22,12 @@
   border-bottom: 3px solid transparent;
   margin-bottom: -1rem;
   padding-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(28, 20, 97, 0.415);
 }
 
 .tabs__btn:hover {
   color: var(--accent);
+  text-shadow: 2px 2px 5px rgba(28, 20, 97, 0.2);
 }
 
 .tabs__btn--active {

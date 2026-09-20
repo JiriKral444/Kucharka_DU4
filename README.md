@@ -60,6 +60,9 @@ npm run dev
 
 Backend poběží na `http://localhost:3000`.
 
+
+
+
 ### 2) Vývoj frontend
 
 ```bash

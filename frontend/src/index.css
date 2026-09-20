@@ -16,8 +16,10 @@ body,
 body {
   font-family: Segoe UI, system-ui, -apple-system, sans-serif;
   background-color: #b1a289;
-  color: #2f1e91;
+  color: #1c6e79;
 }
+
+
 
 #root {
   display: flex;

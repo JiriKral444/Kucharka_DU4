@@ -90,7 +90,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>&copy; 2024 Kniha receptů - React aplikace</p>
+        <p>&copy; 2026 Kniha receptů - React aplikace</p>
       </footer>
     </div>
   );
